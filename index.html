@@ -1,40 +1,463 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedro-Victor</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="./styles/responsive.css">
+    <link rel="stylesheet" href="./styles/font.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">    
 </head>
 <body>
     <header class="cabecalho">
         <ul>
-            <li class="home">Home</li>
-            <li class="about">Sobre Mim</li>
-            <li class="projects">Projetos</li>
-            <li class="contact">Contato</li>
-
-            <img src="./assets/github-icon.svg" alt=" logo do github">
-
-            <img src="./assets/linkedin.svg" alt="logo do linkedin">
-
+                <a href="#hero"><li class="home">Home</li></a>
+                <a href="#about"><li class="about">Sobre Mim</li></a>
+                <a href="#projects"><li class="projects">Projetos</li></a>
         </ul>
+
+        <a href="https://github.com/pedrovicto" target="_blank"><img src="./assets/github-icon.svg" alt=" logo do github" ></a>
+                
+        <a href="https://www.linkedin.com/in/pedrovictorsilva/" target="_blank"><img src="./assets/linkedin.svg" alt="logo do linkedin"></a>
+           
     </header>
 
-    <h1>Pedro Victor</h1>
+    <section class="hero">
+        <h1 class="name-gradient">Pedro Victor</h1>
 
-    <img src="./assets/porfile.svg" alt="foto de pedro victor">
+        <img  class="porfile" src="./assets/porfile.svg" alt="foto de pedro victor">
 
-    <h2>Habilidades Técnicas</h2>
+    </section>
+    
+    <h1 class="description typing-cursor">&lt;I´m Developer  web /&gt;</h1>
 
-    <img src="./assets/html.svg" alt="">
-    <img src="./assets/css.svg" alt="">
-    <img src="./assets/js.svg" alt="">
-    <img src="./assets/ts.svg" alt="">
-    <img src="./assets/git.svg" alt="">
-    <img src="./assets/github-img.svg" alt="">
-    <img src="./assets/react.svg" alt="">
-    <img src="./assets/nodejs 1.svg" alt="">
-    <img src="" alt="">
-    <img src="" alt="">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const element = document.querySelector(".description");
+          const phrases = [
+            " <I´m Developer web /> ",
+          ];
+      
+          let phraseIndex = 0;
+          let letterIndex = 0;
+          let isDeleting = false;
+          const typingSpeed = 100;
+          const pauseBetweenPhrases = 1500;
+      
+          function type() {
+            const currentPhrase = phrases[phraseIndex];
+            if (isDeleting) {
+              element.textContent = currentPhrase.substring(0, letterIndex--);
+            } else {
+              element.textContent = currentPhrase.substring(0, letterIndex++);
+            }
+      
+            if (!isDeleting && letterIndex === currentPhrase.length) {
+              isDeleting = true;
+              setTimeout(type, pauseBetweenPhrases);
+            } else if (isDeleting && letterIndex === 0) {
+              isDeleting = false;
+              phraseIndex = (phraseIndex + 1) % phrases.length;
+              setTimeout(type, 500);
+            } else {
+              setTimeout(type, isDeleting ? 50 : typingSpeed);
+            }
+          }
+      
+          type();
+        });
+      </script>
+      
+    
+    <section class="skills">
+
+        <div class="text">
+            <h2>Habilidades Técnicas</h2>
+            <h3>Técnologias que ja utilizei e estou estudando</h3>
+        </div>
+
+        <div class="tech-skills">   
+            <img src="./assets/html.svg" alt="a" >
+            <img src="./assets/css.svg" alt="a" >
+                <img src="./assets/js.svg" alt="a" >
+                <img src="./assets/nodejs 1.svg" alt="a" >
+                <img src="./assets/react.svg" alt="a" >
+                <img src="./assets/ts.svg" alt="a" >
+                <img src="./assets/git.svg" alt="a" >
+                <img src="./assets/github-img.svg" alt="a" >
+        </div>
+        
+    </section>
+    
+    <section class="about" id="about">
+        <h2>Sobre Mim</h2>
+
+        <p>
+            Estudante de desenvolvimento web Fullstack 
+            com conhecimentos em HTML, CSS, JavaScript, React e TypeScript. 
+            Familiaridade com Git, GitHub e experiência básica em Node.js, Express e ORM Prisma. 
+            Motivado a aprender, contribuir e crescer profissionalmente na criação de soluções digitais 
+            inovadoras e eficientes.
+        </p>
+
+        <h2>Educação</h2>
+
+        <div class="edu">
+            <div class="education">
+                <h3>Redes de Computadores</h3>
+                <div class="school">
+                    <img src="./assets/Vector.svg" alt="">
+                    <p>EEEP Leonel de Moura Brizola</p>
+                </div>
+            </div>
+    
+    
+            <div class="data">
+                <div class="border"><p>Cursando</p></div>
+                
+                <div class="data-school">
+                    <img src="./assets/calendar.svg" alt="">
+                Jan 2023 - Dec 2025
+                </div>
+    
+            </div>
+            
+
+
+        </div>
+        <div class="point-border"></div>
+    </section>
+
+    <section class="projects" id="projects">
+        <div class="text">
+            <h1>Projetos</h1>
+            <h3>Um pouco sobre os projetos que desenvolvi!</h3>
+        </div>
+            
+        <div class="cards">
+            <section class="card1">
+                <div class="card">
+                    <img src="./assets/p1.svg" alt="" class="imagem">
+                    <div class="content">
+                        <h2>Projeto X-MEN</h2>
+                        <p>
+                            Este é o primeiro site que desenvolvi, uma página interativa onde os usuários 
+                            podem passar o mouse sobre diferentes personagens
+                            dos X-Men para ver seus detalhes, incluindo imagem, nome e descrição.
+                        </p>
+    
+                        <p>Técnologias usadas: HTML, CSS, Javascript</p>
+    
+                        <div class="links">
+    
+                            <div class="site">
+                                <img src="./assets/link.svg" alt="">
+                                <a href="https://x-men-szpc-rose.vercel.app" target="_blank">Ver Site</a>
+                            </div>
+    
+                        <div class="code">
+                            <img src="./assets/github.svg" alt="">
+                            <a href="https://github.com/pedroVicto/x-men-szpc" target="_blank">Ver Código</a>
+                        </div>
+                    </div>                
+                </div>
+            </section>
+
+            <section class="card1">
+                <div class="card">
+                    <img src="./assets/p2.svg" alt="" class="imagem">
+                    <div class="content">
+                        <h2>DevLinks</h2>
+                        <p>
+                            Site desenvolvido para listar links e também aprender a tecnologia de modo escuro e modo claro.
+                        </p>
+    
+                        <p>Técnologias usadas: HTML, CSS, Javascript</p>
+    
+                        <div class="links">
+    
+                            <div class="site">
+                                <img src="./assets/link.svg" alt="">
+                                <a href="https://projeto-five-dusky.vercel.app" target="_blank">Ver Site</a>
+                            </div>
+    
+                        <div class="code">
+                            <img src="./assets/github.svg" alt="">
+                            <a href="https://github.com/pedroVicto/projeto" target="_blank">Ver código</a>
+                        </div>
+                    </div>                
+                </div>
+            </section>
+
+            <section class="card1">
+                <div class="card">
+                    <img src="./assets/p3.svg" alt="" class="imagem">
+                    <div class="content">
+                        <h2>Site Starbucks</h2>
+                        <p>
+                            Site que lista alguns produtos do starbucks
+                        </p>
+    
+                        <p>Técnologias usadas: HTML, CSS, Javascript</p>
+    
+                        <div class="links">
+    
+                            <div class="site">
+                                <img src="./assets/link.svg" alt="">
+                                <a href="https://starbucks-rho-ten.vercel.app" target="_blank">ver site</a>
+                            </div>
+    
+                        <div class="code">
+                            <img src="./assets/github.svg" alt="">
+                            <a href="https://github.com/pedroVicto/Starbucks" target="_blank">Ver código</a>
+                        </div>
+                    </div>                
+                </div>
+            </section>
+
+            <section class="card1">
+                <div class="card">
+                    <img src="./assets/p4.svg" alt="" class="imagem">
+                    <div class="content">
+                        <h2>Experts Quiz</h2>
+                        <p>
+                            Site desenvovlvido para testar conhecimentos de html, css, javascript.
+                        </p>
+    
+                        <p>Técnologias usadas: HTML, CSS, Javascript</p>
+    
+                        <div class="links">
+    
+                            <div class="site">
+                                <img src="./assets/link.svg" alt="">
+                                <a href="https://quiz-nlw-pi.vercel.app" target="_blank">Ver Site</a>
+                            </div>
+    
+                        <div class="code">
+                            <img src="./assets/github.svg" alt="">
+                            <a href="https://github.com/pedroVicto/quiz-nlw" target="_blank">Ver Código</a>
+                        </div>
+                    </div>                
+                </div>
+            </section>
+
+            <section class="card1">
+
+                <div class="card">
+                    <img src="./assets/p5.svg" alt="" class="imagem">
+                    <div class="content">
+                        <h2>DevBurguer</h2>
+                        <p>
+                            Site que permite o usuário selecionar e comprar alguns 
+                            produtos de uma lanchonete que se conecta com o whatsapp web 
+                        </p>
+    
+                        <p>Técnologias usadas: HTML, TailwindCSS, Javascript</p>
+    
+                        <div class="links">
+    
+                            <div class="site">
+                                <img src="./assets/link.svg" alt="">
+                                <a href="https://devburguer-eta.vercel.app" target="_blank">Ver Site</a>
+                            </div>
+    
+                        <div class="code">
+                            <img src="./assets/github.svg" alt="">
+                            <a href="https://github.com/pedroVicto/devburguer" target="_blank">Ver Código</a>
+                        </div>
+                    </div>                
+                </div>
+            </section>
+
+            <section class="card1">
+                <div class="card">
+                    <img src="./assets/p6.svg" alt="" class="imagem">
+                    <div class="content">
+                        <h2>Site GTA V </h2>
+                        <p>
+                            Site que funciona como réplica do site do jogo GTA V para compra e suporte
+                        </p>
+    
+                        <p>Técnologias usadas: HTML, CSS, Javascript</p>
+    
+                        <div class="links">
+    
+                            <div class="site">
+                                <img src="./assets/link.svg" alt="">
+                                <a href="https://projeto-gta-alpha.vercel.app" target="_blank">Ver site</a>
+                            </div>
+    
+                        <div class="code">
+                            <img src="./assets/github.svg" alt="">
+                            <a href="https://github.com/pedroVicto/projeto-gta" target="_blank">Ver Código</a>
+                        </div>
+                    </div>                
+                </div>
+            </section>
+
+            <section class="card1">
+                <div class="card">
+                    <img src="./assets/p7.svg" alt="" class="imagem">
+                    <div class="content">
+                        <h2>NLW PLANNER</h2>
+                        <p>
+                            Site que funciona como organizador e agenda de viagens permitindo criar atividades e planejar 
+                            quando irá para o local desejado e quando irá retornar
+                        </p>
+    
+                        <p>Técnologias usadas: ReactJS, TailwindCSS, Typescript</p>
+    
+                        <div class="links">
+    
+                            <div class="site">
+                                <img src="./assets/link.svg" alt="">
+                                <a href="https://nlw-planner-xi.vercel.app" target="_blank">Ver Site</a>
+                            </div>
+    
+                        <div class="code">
+                            <img src="./assets/github.svg" alt="">
+                            <a href="https://github.com/pedroVicto/nlw-planner" target="_blank">Ver Código</a>
+                        </div>
+                    </div>                
+                </div>
+            </section>
+
+            <section class="card1">
+                <div class="card">
+                    <img src="./assets/p8.svg" alt="" class="imagem">
+                    <div class="content">
+                        <h2>Sign Site</h2>
+                        <p>
+                            Site que funciona como acesso de uma tela de login usando componentes prontos da biblioteca Shadcn/UI
+                        </p>
+    
+                        <p>Técnologias usadas: ReactJS, CSS, Javascript, Shadcn/UI</p>
+    
+                        <div class="links">
+    
+                            <div class="site">
+                                <img src="./assets/link.svg" alt="">
+                                <a href="https://react-form-three-swart.vercel.app" target="_blank">Ver Site</a>
+                            </div>
+    
+                        <div class="code">
+                            <img src="./assets/github.svg" alt="">
+                            <a href="https://github.com/pedroVicto/react-form" target="_blank">Ver Código</a>
+                        </div>
+                    </div>                
+                </div>
+            </section>
+
+            <section class="card1">
+                <div class="card">
+                    <img src="./assets/p9.svg" alt="" class="imagem">
+                    <div class="content">
+                        <h2>ALMY Protein</h2>
+                        <p>
+                            Landing Page feita para a turma ADM3 em um evento chamado
+                            Innovation Day 2024 para divulgar seu produto uma barrinha de chocolate chamada ALMY
+                        </p>
+    
+                        <p>Técnologias usadas: HTML, CSS, javascript</p>
+    
+                        <div class="links">
+    
+                            <div class="site">
+                                <img src="./assets/link.svg" alt="">
+                                <a href="https://landing-page-liart-nu.vercel.app" target="_blank">Ver Site</a>
+                            </div>
+    
+                        <div class="code">
+                            <img src="./assets/github.svg" alt="">
+                            <a href="https://github.com/pedroVicto/landing-page" target="_blank">Ver Código</a>
+                        </div>
+                    </div>                
+                </div>
+            </section>
+
+            <section class="card1">
+                <div class="card">
+                    <img src="./assets/p10.svg" alt="" class="imagem">
+                    <div class="content">
+                        <h2>Order Books</h2>
+                        <p>
+                            Site que descreve a história de alguns livros e autores mostrando um pouco da biografia dos autores 
+                        </p>
+    
+                        <p>Técnologias usadas: Svelte, Javascript</p>
+    
+                        <div class="links">
+    
+                            <div class="site">
+                                <img src="./assets/link.svg" alt="">
+                                <a href="https://dainty-blini-f04c87.netlify.app" target="_blank">Ver Site</a>
+                            </div>
+    
+                        <div class="code">
+                            <img src="./assets/github.svg" alt="">
+                            <a href="https://github.com/pedroVicto/order-books" target="_blank">Ver Código</a>
+                        </div>
+                    </div>                
+                </div>
+            </section>
+
+            <section class="card1">
+                <div class="card">
+                    <img src="./assets/p11.svg" alt="" class="imagem">
+                    <div class="content">
+                        <h2>Cadastro de usuários</h2>
+                        <p>
+                            Site que permite criar, editar e apagar usuários listados
+                        </p>
+    
+                        <p>Técnologias usadas: ReactJS, CSS</p>
+    
+                        <div class="links">
+    
+                            <div class="site">
+                                <img src="./assets/link.svg" alt="">
+                                <a href="https://cadastro-de-usuarios-khaki.vercel.app" target="_blank">Ver Site</a>
+                            </div>
+    
+                        <div class="code">
+                            <img src="./assets/github.svg" alt="">
+                            <a href="https://github.com/pedroVicto/cadastro-de-usuarios" target="_blank">Ver Código</a>
+                        </div>
+                    </div>                
+                </div>
+            </section>
+
+            <section class="card1">
+                <div class="card">
+                    <img src="./assets/p12.svg" alt="" class="imagem">
+                    <div class="content">
+                        <h2>ACME Next</h2>
+                        <p>
+                            Site que permite escolher usuários do banco e definir se as faturas foram pagas ou estão em pendência.
+                        </p>
+    
+                        <p>Técnologias usadas: NextJS 14, TypeScript</p>
+    
+                        <div class="links">
+    
+                            <div class="site">
+                                <img src="./assets/link.svg" alt="">
+                                <a href="https://acme-dashboard-kappa-flax.vercel.app" target="_blank">Ver Site</a>
+                            </div>
+    
+                        <div class="code">
+                            <img src="./assets/github.svg" alt="">
+                            <a href="https://github.com/pedroVicto/acme-nextjs" target="_blank">Ver Código</a>
+                        </div>
+                    </div>                
+                </div>
+            </section>
+        
+    </section>
+
 </body>
 </html>
