@@ -1,203 +1,222 @@
-/* Telas menores que 1024px (ex: tablets) */
-@media (max-width: 1024px) {
+/* Reset básico */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  /* Telas menores que 1024px (ex: tablets) */
+  @media (max-width: 1024px) {
     .hero {
-        flex-direction: column;
-        text-align: center;
-        gap: 30px;
+      flex-direction: column;
+      text-align: center;
+      gap: 30px;
+      padding: 0 20px;
     }
-
+  
     .name-gradient {
-        font-size: 64px;
-        margin-left: 0;
+      font-size: 64px;
+      margin-left: 0;
     }
-
+  
     .porfile {
-        margin-right: 0;
-        width: 220px;
+      margin: 0 auto;
+      width: 220px;
     }
-
+  
     .about {
-        margin: 100px auto 0;
-        padding: 0 20px;
-        max-width: 90%;
+      margin: 80px auto 0;
+      padding: 0 20px;
+      max-width: 90%;
+      text-align: center;
     }
-
+  
     .projects .text h1 {
-        font-size: 56px;
+      font-size: 48px;
     }
-
+  
     .description {
-        font-size: 48px;
-        text-align: center;
+      font-size: 40px;
+      text-align: center;
     }
-
+  
     .cabecalho {
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-right: 0;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-right: 0;
+      padding: 10px;
     }
-
+  
     .cabecalho ul {
-        display: flex;
-        gap: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
     }
-}
-
-/* Telas menores que 768px (celulares em modo retrato) */
-@media (max-width: 768px) {
+  }
+  
+  /* Telas menores que 768px (celulares) */
+  @media (max-width: 768px) {
     .name-gradient {
-        font-size: 42px;
+      font-size: 42px;
     }
-
+  
     .description {
-        font-size: 32px;
+      font-size: 32px;
     }
-
+  
     .skills .text h2 {
-        font-size: 32px;
+      font-size: 28px;
     }
-
+  
     .skills .text h3 {
-        font-size: 20px;
+      font-size: 18px;
     }
-
+  
     .tech-skills {
-        flex-wrap: wrap;
-        gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
     }
-
+  
     .tech-skills img {
-        width: 60px;
-        height: 60px;
+      width: 60px;
+      height: 60px;
     }
-
+  
     .projects .text h1 {
-        font-size: 42px;
+      font-size: 36px;
     }
-
+  
     .projects .text h3 {
-        font-size: 18px;
+      font-size: 18px;
     }
-
+  
     .cards {
-        padding: 20px;
-        grid-template-columns: 1fr;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
     }
-
+  
     .card {
-        margin: 0 auto;
+      margin: 0 auto;
+      width: 90%;
     }
-
+  
     .point-border {
-        width: 100%;
+      width: 100%;
     }
-}
-
-/* Telas menores que 480px (celulares pequenos) */
-@media (max-width: 480px) {
+  }
+  
+  /* Telas menores que 480px (celulares pequenos) */
+  @media (max-width: 480px) {
     .name-gradient {
-        font-size: 32px;
+      font-size: 32px;
     }
-
+  
     .description {
-        font-size: 24px;
+      font-size: 24px;
     }
-
+  
     .cabecalho li {
-        font-size: 16px;
+      font-size: 14px;
     }
-
+  
     .tech-skills img {
-        width: 50px;
-        height: 50px;
+      width: 50px;
+      height: 50px;
     }
-
+  
     .card {
-        width: 90%;
-        height: auto;
+      width: 100%;
+      height: auto;
     }
-
+  
     .imagem {
-        height: auto;
+      width: 100%;
+      height: auto;
     }
-}
-
-
-
-/* Telas grandes (ex: monitores ≥1440px) */
-@media (min-width: 1440px) {
-    body {
-        max-width: 1400px;
-        margin: 0 auto;
-    }
-
-    .hero {
-        padding: 0 100px;
-    }
-
-    .name-gradient {
-        font-size: 108px;
-        margin-left: 100px;
-    }
-
-    .porfile {
-        width: 350px;
-        margin-right: 100px;
-    }
-
-    .description {
-        font-size: 72px;
-        margin-top: 80px;
-    }
-
-    .skills .text h2 {
-        font-size: 56px;
-    }
-
-    .skills .text h3 {
-        font-size: 36px;
-    }
-
-    .tech-skills img {
-        width: 90px;
-        height: 90px;
-    }
-
-    .projects .text h1 {
-        font-size: 96px;
-    }
-
-    .projects .text h3 {
-        font-size: 32px;
-    }
-
-    .cards {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 80px;
-        padding: 60px 120px;
-    }
-
-    .card {
-        width: 100%;
-        max-width: 400px;
-    }
-
-    .about {
-        max-width: 800px;
-        font-size: 20px;
-    }
-
+  
     .about h2 {
-        font-size: 60px;
+      font-size: 32px;
     }
-
+  }
+  
+  /* Telas grandes (ex: ≥1440px) */
+  @media (min-width: 1440px) {
+    body {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+  
+    .hero {
+      padding: 0 100px;
+    }
+  
+    .name-gradient {
+      font-size: 108px;
+      margin-left: 100px;
+    }
+  
+    .porfile {
+      width: 350px;
+      margin-right: 100px;
+    }
+  
+    .description {
+      font-size: 72px;
+      margin-top: 80px;
+    }
+  
+    .skills .text h2 {
+      font-size: 56px;
+    }
+  
+    .skills .text h3 {
+      font-size: 36px;
+    }
+  
+    .tech-skills img {
+      width: 90px;
+      height: 90px;
+    }
+  
+    .projects .text h1 {
+      font-size: 96px;
+    }
+  
+    .projects .text h3 {
+      font-size: 32px;
+    }
+  
+    .cards {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 80px;
+      padding: 60px 120px;
+    }
+  
+    .card {
+      max-width: 400px;
+      width: 100%;
+    }
+  
+    .about {
+      max-width: 800px;
+      font-size: 20px;
+      margin: 100px auto;
+    }
+  
+    .about h2 {
+      font-size: 60px;
+    }
+  
     .point-border {
-        width: 800px;
+      width: 800px;
     }
-
+  
     .cabecalho {
-        justify-content: flex-end;
-        padding: 0 100px;
+      justify-content: flex-end;
+      padding: 0 100px;
     }
-}
+  }
+  

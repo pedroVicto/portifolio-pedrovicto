@@ -138,20 +138,22 @@ li {
     margin: 0 auto;
     max-width: 600px;
     overflow: hidden;
+    padding: 6rem;
     
 }
 
-.about h2 {
-    font-size: 62px;
+.about h1 {
+    font-size: 80px;
     margin: 10px;
     color: #7E72EB;
+    max-width: 500px;
 
 }
 
 .about p {
     color: #A7A7A7;
     max-width: 700px;
-    
+    text-align: center;
 }
 
 
@@ -173,6 +175,7 @@ li {
     justify-content: center;
     align-items: center;
     gap: 60px;
+    font-size: 60px;
 }
 
 .data-school {
@@ -375,3 +378,29 @@ a:hover, .links a:hover {
 .porfile:hover {
     transform: scale(1.05);
 }
+
+
+/* Alvo: toda a barra de rolagem */
+::-webkit-scrollbar {
+    width: 8px; /* Largura da barra vertical */
+    height: 8px; /* Altura da barra horizontal */
+  }
+  
+  /* Parte de fundo da barra (track) */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+  }
+  
+  /* Parte móvel da barra (thumb) */
+  ::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+    transition: 500ms;
+  }
+  
+  /* Quando hover na thumb */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  
