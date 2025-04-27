@@ -1,6 +1,8 @@
 /* Reset básico */
 *, *::before, *::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
   
   /* Telas menores que 1024px (ex: tablets) */
@@ -52,14 +54,42 @@
       justify-content: center;
       gap: 15px;
     }
+
+    .tech-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .tech-skills img {
+      width: 100%;
+      max-width: 200px;
+      padding: 5px;
+    }
+
+    .about h1 {
+      max-width: 600px;
+    }
+
   }
   
   /* Telas menores que 768px (celulares) */
   @media (max-width: 768px) {
+
+    .cabecalho {
+      display: contents;
+    }
+
+    .cabecalho img {
+      margin-left: 100px;
+      
+    }
+
     .name-gradient {
       font-size: 42px;
     }
-  
+
     .description {
       font-size: 32px;
     }
@@ -81,6 +111,10 @@
     .tech-skills img {
       width: 60px;
       height: 60px;
+    }
+
+    .about h1 {
+      font-size: 36px;
     }
   
     .projects .text h1 {
@@ -106,8 +140,16 @@
     .point-border {
       width: 100%;
     }
-  }
-  
+    
+    footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      text-align: center;
+    }
+
+  } 
   /* Telas menores que 480px (celulares pequenos) */
   @media (max-width: 480px) {
     .name-gradient {
@@ -217,6 +259,17 @@
     .cabecalho {
       justify-content: flex-end;
       padding: 0 100px;
+    }
+
+    .rodape {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+      padding: 40px 80px;
+    }
+
+    .rodape h2 {
+      margin-bottom: 5px;
     }
   }
   
